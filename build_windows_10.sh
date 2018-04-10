@@ -10,7 +10,7 @@
 # packer build --only=vmware-iso --var iso_url=~/packer_cache/connect/17025.1000.171020-1626.rs_prerelease_CLIENT_BUSINESS_VOL_x64FRE_en-us.iso --var iso_checksum=2ffc9daea950a2d43e0cafe4807870ce412cf1a9d24a94f6cf9240c71b4b8039 windows_10_insider.json
 
 # Windows 10 Enterprise MSDN
-#packer build --only=vmware-iso --var iso_url=~/packer_cache/msdn/en_windows_10_enterprise_version_1607_updated_jan_2017_x64_dvd_9714415.iso --var iso_checksum=97164DD5C1C933BAEF89A4BDE93D544256134FE4 --var iso_checksum_type=sha1 --var autounattend=./tmp/10/Autounattend.xml windows_10.json
+# packer build --only=vmware-iso --var iso_url=~/packer_cache/msdn/en_windows_10_enterprise_version_1607_updated_jan_2017_x64_dvd_9714415.iso --var iso_checksum=97164DD5C1C933BAEF89A4BDE93D544256134FE4 --var iso_checksum_type=sha1 --var autounattend=./tmp/10/Autounattend.xml windows_10.json
 # packer build --only=vmware-iso --var iso_url=~/packer_cache/msdn/en_windows_10_enterprise_version_1703_updated_march_2017_x64_dvd_10189290.iso --var iso_checksum=77D5E7C91B5DBBEE410FB6C57CB944238BF7176A --var iso_checksum_type=sha1 --var autounattend=./tmp/10/Autounattend.xml windows_10.json
 
 # Windows 10 Client 15031
@@ -20,11 +20,18 @@
 #  --var autounattend=./tmp/10_pro_msdn/Autounattend.xml \
 #  windows_10.json
 
-packer build \
-  --only=vmware-iso \
-  --var vhv_enable=true \
-  --var iso_url=~/packer_cache/connect/17046.1000.171118-1403.rs_prerelease_CLIENT_BUSINESS_VOL_x64FRE_en-us.iso \
-  --var iso_checksum=0c014fda2648f3659682e51ef3609f7b127be09db51c59ad632a6c407afba4b6 \
-  windows_10_insider.json
+# packer build \
+#   --only=vmware-iso \
+#   --var vhv_enable=true \
+#   --var iso_url=~/packer_cache/connect/17046.1000.171118-1403.rs_prerelease_CLIENT_BUSINESS_VOL_x64FRE_en-us.iso \
+#   --var iso_checksum=0c014fda2648f3659682e51ef3609f7b127be09db51c59ad632a6c407afba4b6 \
+#   windows_10_insider.json
 #  --var disk_type_id=3 \
 #  --var disk_size=30720 \
+
+packer build \
+ 	--only=virtualbox-iso \
+ 	--var iso_url=~/Downloads/en_windows_10_multi-edition_vl_version_1709_updated_dec_2017_x64_dvd_100406172.iso \
+ 	--var iso_checksum_type=sha1 \
+ 	--var iso_checksum=1851a0007321fa084145ea24b8d30bf7a72bf1c6 \
+ 	--var autounattend=./answer_files/10/Autounattend.xml windows_10.json

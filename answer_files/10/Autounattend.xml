@@ -36,19 +36,20 @@
                     NOTE: If you are re-configuring this for use of a retail key
                     and using a retail ISO, you need to adjust the <ProductKey> block
                     below to look like this:
-
+                -->
                     <ProductKey>
-                        <Key>W269N-WFGWX-YVC9B-4J6C9-T83GX</Key>
+                        <Key>VB2K3-D6NQT-CKWWP-3CDPG-GMT44</Key>
                         <WillShowUI>Never</WillShowUI>
                     </ProductKey>
-
+                
+                <!--
                     Notice the addition of the `<Key>` element.
                 -->
 
                 <!-- Product Key from https://www.microsoft.com/en-us/evalcenter/evaluate-windows-10-enterprise -->
-                <ProductKey>2FMYP-QCY43-QR9VK-WTVCK
+<!--                 <ProductKey>2FMYP-QCY43-QR9VK-WTVCK
                     <WillShowUI>Never</WillShowUI>
-                </ProductKey>
+                </ProductKey> -->
             </UserData>
             <ImageInstall>
                 <OSImage>
